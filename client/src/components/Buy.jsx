@@ -34,10 +34,12 @@ const erc20 = new ERC20();
    //const klayyAmount = ethers.utils.parseUnits("50", 18);
 
    const receipt = await erc20.transfer('klay','0x4133AeFd43d59F8916b3f3BeF148d71aaEFF53B1','0x1191EcEdB2c19C5cD340bD98e6649AaeF1cB2D22',"50", "e04f31664c36bfd191b8884bad043fbed0f9da89f9d37c1ab38603bc77e5cd5b");
-   //We are provided our private key, as "signer" or "provider" instance of etherjs is not working with NestJs SDK
+    //parameters of transfer function are in this order : (contract address,reciever address,no. of tokens to be transferred,private-key)
 
-
+   //We have provided our private key, as "signer" or "provider" instance of etherjs is not working with NestJs SDK
+      
    //await receipt.wait();
+      
    // print the receipt
    console.log({ receipt });
 
@@ -50,7 +52,7 @@ const erc20 = new ERC20();
     const transaction = await contract.buyChai(name,message,amount)
       await transaction.wait();
 
-      alert("Transaction is successul");
+      alert("Transaction is successful");
       window.location.reload();
     }
     return  (
